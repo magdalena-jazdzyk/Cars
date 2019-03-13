@@ -64,9 +64,9 @@ public class UserDataService {
         Arrays
                 .stream(sortTypes)
                 .forEach(st -> System.out.println(idx[0]++ + ". " + st.toString()));
-        System.out.println("===================================");
+        System.out.println("====================================");
         String text = sc.nextLine();
-        System.out.println("===================================");
+        System.out.println("====================================");
         if (!text.matches("\\d+")) {
             throw new AppException("OPTION VALUE IS NOT CORRECT");
         }
