@@ -28,6 +28,7 @@ public abstract class JsonConverter<T> {
             }
             gson.toJson(element, fileWriter);
         } catch (Exception e) {
+            e.printStackTrace();
             throw new AppException("TO JSON CONVERSION EXCEPTION");
         }
     }

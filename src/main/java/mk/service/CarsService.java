@@ -6,9 +6,12 @@ import mk.model.Car;
 import mk.model.enums.Colour;
 import mk.model.enums.SortType;
 import mk.validator.CarValidator;
+
+import java.awt.*;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.*;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -187,10 +190,10 @@ public class CarsService {
     }
 
     public List<Car> sortCarComponents() {
-       return cars
-               .stream()
-               .peek(car -> car.setComponents(car.getComponents().stream().sorted().collect(Collectors.toCollection(LinkedHashSet::new))))
-               .collect(Collectors.toList());
+        return cars
+                .stream()
+                .peek(car -> car.setComponents(car.getComponents().stream().sorted().collect(Collectors.toCollection(LinkedHashSet::new))))
+                .collect(Collectors.toList());
     }
 
     public Map<String, List<Car>> groupByComponents() {
@@ -210,8 +213,25 @@ public class CarsService {
                         Map.Entry::getValue,
                         (v1, v2) -> v1,
                         LinkedHashMap::new
-                    )
+                        )
                 );
     }
 
+
+    public Car addCars(String model, double mileage, Colour colour, Set<String> component, BigDecimal price) {
+
+        return Car.builder()
+                .model(model)
+                .mileage(mileage)
+                .price(new BigDecimal(String.valueOf(price)))
+                .colour(colour)
+                .components(component)
+                .build();
+//        List<Car> cars = new ArrayList<>();
+  //      cars.add(car);
+   }
+
+    public String getCarJsonFilename() {
+        return carJsonFilename;
+    }
 }

@@ -1,10 +1,12 @@
 package mk.service;
 
 import mk.exceptions.AppException;
+import mk.model.enums.Colour;
 import mk.model.enums.SortType;
 
 import java.math.BigDecimal;
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 public class UserDataService {
@@ -41,7 +43,7 @@ public class UserDataService {
     }
 
     public String getString() {
-        System.out.println("Enter the file name");
+        //System.out.println("Enter the file name");
         return sc.nextLine();
 
     }
@@ -75,6 +77,38 @@ public class UserDataService {
             throw new AppException("OPTION VALUE IS NOT CORRECT");
         }
         return sortTypes[option];
+    }
+
+    public Colour getColour() {
+        Colour[] colours = Colour.values();
+        System.out.println("Enter colour [1 - " + colours.length + "]:");
+        int[] idx = {1};
+        Arrays
+                .stream(colours)
+                .forEach(st -> System.out.println(idx[0]++ + ". " + st.toString()));
+        System.out.println("====================================");
+        String text = sc.nextLine();
+        System.out.println("====================================");
+        if (!text.matches("\\d+")) {
+            throw new AppException("OPTION VALUE IS NOT CORRECT");
+        }
+        int option = Integer.parseInt(text) - 1;
+        if (option < 0 || option >= colours.length) {
+            throw new AppException("OPTION VALUE IS NOT CORRECT");
+        }
+        return colours[option];
+    }
+
+    public Set<String> getComponents() {
+        System.out.println("Enter components separating them using coma");
+        String text = sc.nextLine();
+
+        if (!text.matches("([A-Z ]+,)*[A-Z]+")) {
+            throw new AppException("COMPONENTS FROM USER ARE NOT CORRECT");
+        }
+
+        String[] components = text.split(",");
+        return Arrays.stream(components).collect(Collectors.toSet());
     }
 
 

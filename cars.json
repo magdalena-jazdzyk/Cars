@@ -1,72 +1,25 @@
 [
   {
-    "model": "BMW",
-    "price": 120,
-    "colour": "BLACK",
-    "mileage": 1500,
-    "components": [
-      "ALLOY WHEELS",
-      "ABS"
-    ]
-  },
-  {
-    "model": "BMW",
-    "price": 1220,
-    "colour": "BLACK",
-    "mileage": 1500,
-    "components": [
-      "ALLOY WHEELS",
-      "ABS"
-    ]
-  },
-  {
-    "model": "MAZDA",
-    "price": 160,
-    "colour": "WHITE",
-    "mileage": 2500,
-    "components": [
-      "AIR CONDITIONING",
-      "BLUETOOTH"
-    ]
-  },
-  {
-    "model": "MAZDA",
-    "price": 460,
-    "colour": "WHITE",
-    "mileage": 2500,
-    "components": [
-      "BLUETOOTH",
-      "AIR CONDITIONING"
-    ]
-  },
-  {
-    "model": "CITROEN",
-    "price": 7550,
-    "colour": "WHITE",
-    "mileage": 2200,
-    "components": [
-      "AIR CONDITIONING",
-      "ABS"
-    ]
-  },
-  {
-    "model": "FIAT",
-    "price": 50,
-    "colour": "BLACK",
-    "mileage": 1200,
-    "components": [
-      "BLUETOOTH",
-      "ABS"
-    ]
-  },
-  {
-    "model": "AUDI",
-    "price": 450,
+    "model": "MERCEDES",
+    "mileage": 1890233.0,
+    "price": 1216,
     "colour": "GREY",
-    "mileage": 800,
+    "components": [
+      "MP3",
+      "KLIMA",
+      "SZYBERDACH",
+      "PARK"
+    ]
+  },
+  {
+    "model": "YY",
+    "mileage": 3.0,
+    "price": 3.0,
+    "colour": "GREY",
     "components": [
       "ABS",
-      "BLUETOOTH"
+      "E",
+      "W"
     ]
   }
 ]
